@@ -19,7 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.compose_sandbox.ui.theme.Compose_sandboxTheme
 import java.util.Date
 
-class MainActivity : ComponentActivity() {
+class MainActivityWebUni : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
