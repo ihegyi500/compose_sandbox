@@ -24,6 +24,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -37,7 +38,7 @@ class MainActivityPhilipp4 : ComponentActivity() {
             val title = "Kermit is drinking tea"
 
             Box(modifier = Modifier
-                .fillMaxWidth(0.75f)
+                .width(painter.intrinsicSize.width.dp)
                 .padding(16.dp)
             ) {
                 ImageCard(
@@ -47,6 +48,25 @@ class MainActivityPhilipp4 : ComponentActivity() {
                 )
             }
         }
+    }
+}
+
+@Preview
+@Composable
+fun ImageCardPreview() {
+    val painter = painterResource(R.drawable.kermit)
+    val description = "Kermit the Frog, drinking tea"
+    val title = "Kermit is drinking tea"
+
+    Box(modifier = Modifier
+        .fillMaxWidth(0.75f)
+        .padding(16.dp)
+    ) {
+        ImageCard(
+            painter = painter,
+            contentDescription = description,
+            title = title
+        )
     }
 }
 
@@ -65,7 +85,8 @@ fun ImageCard(
         )
     ) {
         Box(
-            modifier = Modifier.height(180.dp)
+            modifier = Modifier
+                .height(180.dp)
         ) {
             Image(
                 painter = painter,
